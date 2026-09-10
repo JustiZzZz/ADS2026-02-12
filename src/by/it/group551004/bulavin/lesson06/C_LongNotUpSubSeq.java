@@ -68,9 +68,8 @@ public class C_LongNotUpSubSeq {
         for(int i = 1; i <= n; i++){
             dp[i] = (int)2E9;
         }
-
         dp[0] = 0;
-        for (int i = 0; i < n; i++) {
+        for(int i = 0; i < n; i++){
             int l = 0, r = n, ans = 0;
             while(l <= r){
                 int mid = (l + r + 1) / 2;
