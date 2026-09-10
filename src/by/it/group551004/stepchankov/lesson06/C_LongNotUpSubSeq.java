@@ -1,4 +1,4 @@
-package by.it.group551004.bulavin.lesson06;
+package by.it.group551004.stepchankov.lesson06;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -57,20 +57,17 @@ public class C_LongNotUpSubSeq {
         }
         //тут реализуйте логику задачи методами динамического программирования (!!!)
         int result = 0;
-
         for(int i = 0; i < n / 2; i++){
             m[i] += m[n - i - 1];
             m[n - i - 1] = m[i] - m[n - i - 1];
             m[i] -= m[n - i - 1];
         }
-
         int[] dp = new int[n + 1];
         for(int i = 1; i <= n; i++){
             dp[i] = (int)2E9;
         }
-
         dp[0] = 0;
-        for (int i = 0; i < n; i++) {
+        for(int i = 0; i < n; i++){
             int l = 0, r = n, ans = 0;
             while(l <= r){
                 int mid = (l + r + 1) / 2;
